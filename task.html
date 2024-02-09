@@ -1,0 +1,404 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD Operations</title>
+</html>
+<body>
+
+  <h2>CRUD Operations</h2>
+
+   Form for inserting/updating entries 
+   <form id="dataForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" required>
+    <label for="age">Age:</label>
+    <input type="number" id="age" required>
+    <label for="city">City:</label>
+    <input type="text" id="city" required>
+    <button type="button" onclick="saveData()">Save</button>
+  </form> 
+
+   <h2>Data Table</h2>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>City</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+
+  <script src="task.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CRUD Table</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+             Table data will be added dynamically using JavaScript -->
+        <!-- </tbody>
+    </table>
+
+    <script src="task.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>CRUD Table</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            < Table data will be added dynamically using JavaScript -->
+        <!-- </tbody>
+    </table>
+
+    <button onclick="addRow()">Add Row</button>
+
+    <script src="task.js"></script>
+</body>
+</html> --> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <form>
+         Your form fields go here -->
+        <!-- <input type="text" id="name" placeholder="Name">
+        <input type="text" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button type="button" onclick="demo()">Submit</button>
+    </form>
+    <button onclick="showSortOptions()">Sort Options</button>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-down-up" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M11.5 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L11 2.707V14.5a.5.5 0 0 0 .5.5m-7-14a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L4 13.293V1.5a.5.5 0 0 1 .5-.5"/>
+    </svg>
+    <div id="table"></div>
+    <script>
+        let records1 = [];
+        let isEdit = -1;
+        const deleteData = (value) => {
+            const deleteData = records1.filter((item, index) => index !== value);
+            console.log(deleteData);
+            records1 = deleteData;
+            Table1();
+        };
+        const editData = (editer) => {
+            isEdit = editer;
+            let type = records1.find((item, index) => index === editer);
+            console.log(type);
+        };
+        const Table1 = () => {
+            document.getElementById("table").innerHTML = records1.map((item, index) => {
+                return `<tr>
+                    <td>${item.name}</td>
+                    <td>${item.email}</td>
+                    <td>${item.password}</td>
+                    <td><button onclick="deleteData(${index})">Delete</button></td>
+                    <td><button onclick="editData(${index})">Edit</button></td>
+                    <td><input  onclick="checkMainCheckbox()" type="checkbox" class="subCheckbox" /></td>
+                </tr>`;
+            }).join("");
+        };
+        const demo = () => {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const ps = document.getElementById("password").value;
+            const table = { name: name, email: email, password: ps };
+            if (isEdit !== -1) {
+                const updatedArray = records1.map((item, index) => (index === isEdit) ? table : item);
+                records1 = updatedArray;
+                console.log(updatedArray);
+            } else {
+                records1.push(table);
+            }
+            Table1();
+        };
+        const showSortOptions = () => {
+            const sortOption = prompt("Sort by: (name, date, type)");
+            if (sortOption) {
+                sortData(sortOption);
+            }
+        };
+        const sortData = (sortOption) => {
+            // Implement sorting logic based on the selected option
+            if (sortOption === "name") {
+                records1.sort((a, b) => a.name.localeCompare(b.name));
+            } else if (sortOption === "date") {
+                // Implement date sorting logic if needed
+            } else if (sortOption === "type") {
+                // Implement type sorting logic if needed
+            }
+            Table1();
+        };
+    </script>
+</body>
+</html> --> 
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced CRUD Table</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Advanced CRUD Table</h1>
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            < Table data will be added dynamically using JavaScript -->
+        <!-- </tbody>
+    </table>
+
+    <div id="actions">
+        <input type="text" id="newName" placeholder="Enter a name">
+        <button onclick="addRow()">Add Row</button>
+    </div>
+
+    <script src="task.js"></script>
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic CRUD Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        #actions {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+             Table data will be added dynamically using JavaScript -->
+        <!-- </tbody>
+    </table>
+
+    <div id="actions">
+        <input type="text" id="newName" placeholder="Enter a name">
+        <button onclick="addRow()">Add Row</button>
+    </div>
+
+    <script>
+        const data = [
+            { id: 1, name: "John Doe" },
+            { id: 2, name: "Jane Doe" },
+            // Add more data as needed
+    ];
+
+        const tableBody = document.getElementById("tableBody");
+        const newNameInput = document.getElementById("newName");
+
+        function createTable() {
+            tableBody.innerHTML = "";
+
+            data.forEach((item) => {
+                const row = tableBody.insertRow();
+                row.insertCell(0).textContent = item.id;
+                row.insertCell(1).textContent = item.name;
+                const actionCell = row.insertCell(2);
+                actionCell.innerHTML = `<button onclick="updateRow(${item.id})">Update</button>
+                                        <button onclick="deleteRow(${item.id})">Delete</button>`;
+            });
+        }
+
+        function addRow() {
+            const newName = newNameInput.value.trim();
+            if (newName === "") {
+                alert("Please enter a name.");
+                return;
+            }
+
+            const newId = data.length + 1;
+            data.push({ id: newId, name: newName });
+            createTable();
+            newNameInput.value = "";
+        }
+
+        function updateRow(id) {
+            const newName = prompt("Enter a new name:");
+            if (newName !== null) {
+                data.forEach(item => {
+                    if (item.id === id) {
+                        item.name = newName;
+                    }
+                });
+                createTable();
+            }
+        }
+
+        function deleteRow(id) {
+            const indexToDelete = data.findIndex(item => item.id === id);
+            if (indexToDelete !== -1) {
+                data.splice(indexToDelete, 1);
+                createTable();
+            }
+        }
+
+        // Initial table creation
+        createTable();
+    </script>
+</body>
+</html> --> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid gray;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #c8bbbb;
+        }
+
+        #actions {
+            margin-top: 10px;
+        }
+      
+    </style>
+</head>
+<body>
+
+    <table id="myTable">
+        <thead>
+            <tr>
+                <th>checkbox</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>SName</th>
+                <th>Action</th>
+               
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+     
+        </tbody>
+    </table>
+
+    <div id="actions" class="box1">
+    
+        <label for="newId">ID:</label>  <input type="number" id="newId" placeholder="Enter an ID" min="1" required>
+
+        <label for="newName" style="padding-left: 30px;">Name:</label>
+        <input type="text" style="width: 22%;" id="newName" placeholder="Enter a name" required>
+
+        <label for="newSName" >SName:</label>
+        <input type="text" style="width: 25%;" id="newSName" placeholder="Enter a name" required>
+       
+
+        <button onclick="addRow()" style="margin-left: 120px; background-color: black; color: white; height: 30px; width: 10%;">Add Row</button>
+  
+</div>
+    <script src="task.js"></script>
+    <!-- <script src="C:\Users\AUSU\Downloads\ARRAY1.js"></script> -->
+    <!-- <script src="D:\Devil\string.js"></script> -->
+</body>
+</html>
